@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3vvkgo65dwei"]
+
+[ext_resource type="Script" path="res://objects/blocks/Block.gd" id="1_rqi6y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mbsd0"]
+size = Vector2(16, 16)
+
+[node name="Block" type="StaticBody2D" groups=["block"]]
+script = ExtResource("1_rqi6y")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_mbsd0")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+z_index = 1

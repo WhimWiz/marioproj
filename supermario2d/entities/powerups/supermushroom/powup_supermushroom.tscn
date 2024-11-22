@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://cn7rrsd4j17wy"]
+
+[ext_resource type="PackedScene" uid="uid://p7roqsgf83ve" path="res://entities/baseEntity.tscn" id="1_6vikb"]
+[ext_resource type="Texture2D" uid="uid://bfjcxofp2h30c" path="res://entities/powerups/powerups_spritesheet.png" id="2_0g3sy"]
+[ext_resource type="Script" path="res://entities/powerups/Powerup.gd" id="2_o1f0n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mah8k"]
+atlas = ExtResource("2_0g3sy")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gr2xv"]
+atlas = ExtResource("2_0g3sy")
+region = Rect2(17, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_abymh"]
+atlas = ExtResource("2_0g3sy")
+region = Rect2(34, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w51do"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mah8k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gr2xv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_abymh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gr2xv")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}]
+
+[node name="Entity_SuperMushroom" instance=ExtResource("1_6vikb")]
+script = ExtResource("2_o1f0n")
+
+[node name="Sprite" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_w51do")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.407268
